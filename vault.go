@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/mohieey/gault/encrypt"
+	"github.com/mohieey/gault/cipher"
 )
 
 type Vault struct {
@@ -45,7 +45,7 @@ func (v *Vault) load() error {
 	if err != nil {
 		return err
 	}
-	decryptedJSON, err := encrypt.Decrypt(v.encodingKey, sb.String())
+	decryptedJSON, err := cipher.Decrypt(v.encodingKey, sb.String())
 	if err != nil {
 		return err
 	}
@@ -69,7 +69,7 @@ func (v *Vault) save() error {
 		return err
 	}
 
-	encryptedJSON, err := encrypt.Encrypt(v.encodingKey, sb.String())
+	encryptedJSON, err := cipher.Encrypt(v.encodingKey, sb.String())
 	if err != nil {
 		return err
 	}
