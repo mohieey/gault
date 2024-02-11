@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	v := gault.Memory("123abc")
+	v := gault.File("123abc", "sr")
 	v.Set("secret", "sdsdsds")
-	fmt.Println(v.Get("secret"))
+	val, _ := v.Get("secret")
+	fmt.Println(val)
 }
