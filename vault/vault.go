@@ -1,4 +1,4 @@
-package gault
+package vault
 
 import (
 	"encoding/json"
