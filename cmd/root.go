@@ -38,5 +38,5 @@ func secretsPath() string {
 		os.Exit(1)
 	}
 
-	return filepath.Join(home, ".secrets")
+	return filepath.Join(home, ".gault")
 }
